@@ -2,37 +2,78 @@
 <html lang="gu">
 <head>
   <meta charset="UTF-8">
-  <title>Gujarati Super AI App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gujarati Super AI App 🇮🇳</title>
 
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f6fb; margin: 0; }
-    header { background: #0d6efd; color: white; padding: 15px; text-align: center; }
-    section { background: white; margin: 15px; padding: 15px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    h2 { color: #0d6efd; }
-    textarea, input, button { width: 100%; padding: 10px; margin-top: 8px; font-size: 16px; }
-    button { background: #0d6efd; color: white; border: none; border-radius: 6px; cursor: pointer; }
-    iframe { width: 100%; border: none; border-radius: 10px; }
-    footer { text-align: center; padding: 10px; color: gray; font-size: 14px; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+    }
+    header {
+      background: #0d6efd;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    section {
+      background: white;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0d6efd;
+      margin-top: 0;
+    }
+    textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      font-size: 16px;
+    }
+    button {
+      background: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 12px;
+      color: gray;
+      font-size: 14px;
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Gujarati Super AI App 🇮🇳</h1>
-  <p>All-in-One Gujarati AI Tools</p>
+  Gujarati Super AI App 🇮🇳<br>
+  Smart • Free • All-in-One
 </header>
 
 <section>
-  <h2>🤖 Gujarati AI Chat (Demo)</h2>
-  <textarea id="chatInput" placeholder="hello, kem cho, naam, photo... લખો"></textarea>
+  <h2>🤖 Gujarati AI Chat (Smart Demo)</h2>
+  <textarea id="chatInput" placeholder="hello, kem chho, tame kon cho, madad karo..."></textarea>
   <button onclick="aiChat()">Send</button>
   <textarea id="chatOutput" readonly placeholder="AI જવાબ અહીં આવશે"></textarea>
 </section>
 
 <section>
-  <h2>🔊 Text to Speech (ગુજરાતી)</h2>
+  <h2>🔊 Text to Speech (Gujarati)</h2>
   <textarea id="ttsText" placeholder="અહીં ગુજરાતી લખો..."></textarea>
   <button onclick="speakText()">અવાજમાં સાંભળો</button>
 </section>
@@ -44,73 +85,61 @@
 </section>
 
 <section>
-  <h2>🖼 Photo Editing</h2>
-  <iframe src="https://www.photopea.com/" height="350"></iframe>
+  <h2>🖼 Photo Editing (AI Tool)</h2>
+  <iframe src="https://www.photopea.com/"></iframe>
 </section>
 
 <section>
-  <h2>🎥 Video Tools</h2>
-  <p>Free tools: Clipchamp, FlexClip</p>
+  <h2>🎥 Video Editing Tools</h2>
+  <p>Free Online Tools:</p>
+  <ul>
+    <li>Clipchamp</li>
+    <li>FlexClip</li>
+    <li>Kapwing</li>
+  </ul>
 </section>
 
 <footer>
-  Developed by Mitul Thakor
+  Developed by Mitul Thakor © 2026
 </footer>
 
 <script>
-function aiChat() {
-  let text = document.getElementById("chatInput").value.toLowerCase().trim();
-  let reply = "";
+  function aiChat() {
+    let text = document.getElementById("chatInput").value.toLowerCase();
+    let reply = "માફ કરશો, થોડું સ્પષ્ટ લખશો?";
 
-  if (text === "") {
-    reply = "કૃપા કરીને કંઈક લખો 🙂";
-  }
-  else if (text.includes("hello") || text.includes("hi")) {
-    reply = "નમસ્તે 👋 હું તમારી મદદ માટે છું";
-  }
-  else if (text.includes("kem cho")) {
-    reply = "હું બરાબર છું 😊 તમે કેમ છો?";
-  }
-  else if (text.includes("tamaru naam")) {
-    reply = "મારું નામ Gujarati Super AI છે 🤖";
-  }
-  else if (text.includes("gujarati shikho")) {
-    reply = "હું તમને ગુજરાતી શીખવામાં મદદ કરી શકું છું 📘";
-  }
-  else if (text.includes("photo")) {
-    reply = "Photo Editing માટે નીચે Photo Tool વાપરો 🖼️";
-  }
-  else if (text.includes("video")) {
-    reply = "Video Editing માટે Free tools ઉપલબ્ધ છે 🎥";
-  }
-  else if (text.includes("thanks") || text.includes("thank you")) {
-    reply = "તમારો આભાર 🙏";
-  }
-  else if (text.includes("bye")) {
-    reply = "આવજો 👋 ફરી મળશું";
-  }
-  else {
-    reply = "આ પ્રશ્ન હું હજી શીખી રહ્યો છું 🤔 થોડું સરળ પૂછો";
+    if (text.includes("hello") || text.includes("hi"))
+      reply = "નમસ્તે 👋 હું Gujarati Super AI છું";
+    else if (text.includes("kem"))
+      reply = "હું સરસ છું 😊 તમે કેમ છો?";
+    else if (text.includes("naam") || text.includes("kon"))
+      reply = "મારું નામ Gujarati Super AI છે";
+    else if (text.includes("madad"))
+      reply = "હા જરૂર 👍 હું તમારી મદદ કરીશ";
+    else if (text.includes("thanks"))
+      reply = "આભાર 🙏";
+    else if (text.includes("bye"))
+      reply = "આવજો 👋 ફરી મળીએ";
+
+    document.getElementById("chatOutput").value = reply;
   }
 
-  document.getElementById("chatOutput").value = reply;
-}
+  function speakText() {
+    let msg = new SpeechSynthesisUtterance();
+    msg.text = document.getElementById("ttsText").value;
+    msg.lang = "gu-IN";
+    speechSynthesis.speak(msg);
+  }
 
-function speakText() {
-  let msg = new SpeechSynthesisUtterance();
-  msg.text = document.getElementById("ttsText").value;
-  msg.lang = "gu-IN";
-  speechSynthesis.speak(msg);
-}
-
-function startSpeech() {
-  let rec = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-  rec.lang = "gu-IN";
-  rec.onresult = e => {
-    document.getElementById("speechResult").value = e.results[0][0].transcript;
-  };
-  rec.start();
-}
+  function startSpeech() {
+    let rec = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    rec.lang = "gu-IN";
+    rec.onresult = e => {
+      document.getElementById("speechResult").value =
+        e.results[0][0].transcript;
+    };
+    rec.start();
+  }
 </script>
 
 </body>
