@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <title>Gujarati Super AI App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+    }
+    header {
+      background: #0d6efd;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    section {
+      background: white;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0d6efd;
+    }
+    textarea, input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      font-size: 16px;
+    }
+    button {
+      background: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+    iframe {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      color: gray;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Gujarati Super AI App 🇮🇳</h1>
+  <p>All-in-One Gujarati AI Tools</p>
+</header>
+
+<section>
+  <h2>🤖 Gujarati AI Chat (Demo)</h2>
+  <textarea id="chatInput" placeholder="hello, kem, naam લખો..."></textarea>
+  <button onclick="aiChat()">Send</button>
+  <textarea id="chatOutput" readonly placeholder="AI જવાબ અહીં આવશે"></textarea>
+</section>
+
+<section>
+  <h2>🔊 Text to Speech (ગુજરાતી)</h2>
+  <textarea id="ttsText" placeholder="અહીં ગુજરાતી લખો..."></textarea>
+  <button onclick="speakText()">અવાજમાં સાંભળો</button>
+</section>
+
+<section>
+  <h2>🎙 Speech to Text</h2>
+  <button onclick="startSpeech()">બોલો</button>
+  <textarea id="speechResult" placeholder="બોલેલું લખાણ અહીં આવશે"></textarea>
+</section>
+
+<section>
+  <h2>🖼 Photo Editing</h2>
+  <iframe src="https://www.photopea.com/" height="350"></iframe>
+</section>
+
+<section>
+  <h2>🎥 Video Tools</h2>
+  <p>Free tools: Clipchamp, FlexClip</p>
+</section>
+
+<footer>
+  Developed by Mitul Thakor
+</footer>
+
+<script>
+function aiChat() {
+  let text = document.getElementById("chatInput").value.toLowerCase();
+  let reply = "માફ કરશો, હું સમજી શક્યો નથી.";
+
+  if (text.includes("hello")) reply = "નમસ્તે 👋";
+  else if (text.includes("kem")) reply = "હું બરાબર છું 😊";
+  else if (text.includes("naam")) reply = "મારું નામ Gujarati AI છે";
+  else if (text.includes("thanks")) reply = "આભાર 🙏";
+  else if (text.includes("bye")) reply = "આવજો 👋";
+
+  document.getElementById("chatOutput").value = reply;
+}
+
+function speakText() {
+  let msg = new SpeechSynthesisUtterance();
+  msg.text = document.getElementById("ttsText").value;
+  msg.lang = "gu-IN";
+  speechSynthesis.speak(msg);
+}
+
+function startSpeech() {
+  let rec = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  rec.lang = "gu-IN";
+  rec.onresult = e => {
+    document.getElementById("speechResult").value = e.results[0][0].transcript;
+  };
+  rec.start();
+}
+</script>
+
+</body>
+</html>
