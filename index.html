@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gujarati Super Power AI</title>
+
+<style>
+body{font-family:Arial,sans-serif;background:#f4f6fb;margin:0}
+header{background:#0d6efd;color:white;padding:15px;text-align:center}
+section{background:white;margin:15px;padding:15px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+h2{color:#0d6efd}
+textarea,button{width:100%;padding:10px;margin-top:8px;font-size:16px}
+button{background:#0d6efd;color:white;border:none;border-radius:6px}
+iframe{width:100%;border:none;border-radius:10px}
+footer{text-align:center;padding:10px;color:gray}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Gujarati Super Power AI 🇮🇳</h1>
+<p>Chat • Photo • Video • Voice</p>
+</header>
+
+<section>
+<h2>🤖 AI Chat (Demo)</h2>
+<textarea id="chatInput" placeholder="hello, kem, naam..."></textarea>
+<button onclick="chat()">Send</button>
+<textarea id="chatOutput" readonly></textarea>
+</section>
+
+<section>
+<h2>🔊 Text to Speech</h2>
+<textarea id="ttsText" placeholder="ગુજરાતીમાં લખો..."></textarea>
+<button onclick="speak()">સાંભળો</button>
+</section>
+
+<section>
+<h2>🎙 Speech to Text</h2>
+<button onclick="listen()">બોલો</button>
+<textarea id="speechOut"></textarea>
+</section>
+
+<section>
+<h2>🖼 Photo Editing</h2>
+<iframe src="https://www.photopea.com/" height="350"></iframe>
+<iframe src="https://www.remove.bg/upload" height="250"></iframe>
+</section>
+
+<section>
+<h2>🎥 Video Tools</h2>
+<p>Clipchamp • FlexClip</p>
+</section>
+
+<footer>
+Developed by Mitul Thakor
+</footer>
+
+<script>
+function chat(){
+let t=document.getElementById("chatInput").value.toLowerCase();
+let r="સમજાયું નથી";
+if(t.includes("hello"))r="નમસ્તે 👋";
+else if(t.includes("kem"))r="હું મજા માં છું 😊";
+else if(t.includes("naam"))r="મારું નામ Gujarati AI છે";
+else if(t.includes("bye"))r="આવજો 👋";
+document.getElementById("chatOutput").value=r;
+}
+function speak(){
+let u=new SpeechSynthesisUtterance();
+u.text=document.getElementById("ttsText").value;
+u.lang="gu-IN";
+speechSynthesis.speak(u);
+}
+function listen(){
+let r=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
+r.lang="gu-IN";
+r.onresult=e=>document.getElementById("speechOut").value=e.results[0][0].transcript;
+r.start();
+}
+</script>
+
+</body>
+</html>
