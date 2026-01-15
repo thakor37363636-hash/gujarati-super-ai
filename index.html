@@ -1,154 +1,87 @@
 <!DOCTYPE html>
 <html lang="gu">
 <head>
-  <meta charset="UTF-8">
-  <title>Super AI – Gujarati Chat, Photo & Video Editor</title>
+  <meta charset="UTF-8" />
+  <title>Gujarati Super AI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #fff;
+      background: #f5f7fb;
+      margin: 0;
+      padding: 0;
     }
     header {
-      background: #020617;
+      background: #4f46e5;
+      color: white;
       padding: 15px;
       text-align: center;
-      font-size: 22px;
-      font-weight: bold;
     }
-    nav {
-      display: flex;
-      justify-content: space-around;
-      background: #020617;
-      border-bottom: 1px solid #1e293b;
-    }
-    nav button {
-      flex: 1;
-      padding: 12px;
-      background: none;
-      border: none;
-      color: #94a3b8;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    nav button.active {
-      color: #38bdf8;
-      border-bottom: 2px solid #38bdf8;
-    }
-    section {
-      display: none;
+    main {
       padding: 20px;
     }
-    section.active {
-      display: block;
-    }
-    textarea, input[type="file"] {
-      width: 100%;
-      margin-top: 10px;
-    }
     textarea {
-      height: 120px;
+      width: 100%;
+      height: 100px;
+      padding: 10px;
       font-size: 16px;
     }
-    button.action {
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #38bdf8;
+    button {
+      background: #4f46e5;
+      color: white;
       border: none;
+      padding: 10px 20px;
       font-size: 16px;
+      margin-top: 10px;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 6px;
     }
-    canvas, video {
-      max-width: 100%;
-      margin-top: 15px;
-      border-radius: 10px;
+    .answer {
+      background: white;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
-
 <body>
 
-<header>🚀 Super AI – Gujarati All-in-One</header>
+<header>
+  <h1>🤖 Gujarati Super AI</h1>
+  <p>ગુજરાતી માં પ્રશ્ન પૂછો – સરળ જવાબ મેળવો</p>
+</header>
 
-<nav>
-  <button class="active" onclick="openTab('chat')">🤖 AI Chat</button>
-  <button onclick="openTab('photo')">🖼 Photo Edit</button>
-  <button onclick="openTab('video')">🎬 Video Edit</button>
-</nav>
-
-<!-- AI CHAT -->
-<section id="chat" class="active">
-  <h2>Gujarati AI Chat</h2>
-  <textarea id="chatInput" placeholder="Gujarati અથવા English માં લખો..."></textarea>
-  <button class="action" onclick="aiReply()">Send</button>
-  <p id="chatOutput"></p>
-</section>
-
-<!-- PHOTO EDIT -->
-<section id="photo">
-  <h2>Photo Editor</h2>
-  <input type="file" accept="image/*" onchange="loadImage(event)">
+<main>
+  <h3>તમારો પ્રશ્ન લખો:</h3>
+  <textarea id="question" placeholder="ઉદાહરણ: ભારતની રાજધાની કઈ છે?"></textarea>
   <br>
-  <button class="action" onclick="applyFilter()">Apply Filter</button>
-  <canvas id="canvas"></canvas>
-</section>
+  <button onclick="askAI()">AI ને પૂછો</button>
 
-<!-- VIDEO EDIT -->
-<section id="video">
-  <h2>Video Editor (Basic)</h2>
-  <input type="file" accept="video/*" onchange="loadVideo(event)">
-  <video id="videoPlayer" controls></video>
-  <p>⚠️ Advanced AI video edit backend થી આવશે</p>
-</section>
+  <div class="answer" id="answer" style="display:none;"></div>
+</main>
+
+<footer>
+  © 2026 Gujarati Super AI | Free AI Project
+</footer>
 
 <script>
-  function openTab(id) {
-    document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
-    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-    event.target.classList.add("active");
-    document.getElementById(id).classList.add("active");
-  }
+  function askAI() {
+    const q = document.getElementById("question").value;
+    const ans = document.getElementById("answer");
 
-  // Fake AI demo (backend જોડ્યા પછી real બનશે)
-  function aiReply() {
-    const input = document.getElementById("chatInput").value;
-    document.getElementById("chatOutput").innerText =
-      "🤖 AI જવાબ: તમે લખ્યું → " + input;
-  }
-
-  // Photo editing
-  let ctx, img;
-  function loadImage(e) {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onload = function () {
-      img = new Image();
-      img.onload = function () {
-        const canvas = document.getElementById("canvas");
-        canvas.width = img.width / 2;
-        canvas.height = img.height / 2;
-        ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-      }
-      img.src = reader.result;
+    if (q.trim() === "") {
+      alert("કૃપા કરીને પ્રશ્ન લખો");
+      return;
     }
-    reader.readAsDataURL(file);
-  }
 
-  function applyFilter() {
-    ctx.filter = "grayscale(100%) contrast(120%)";
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-  }
-
-  // Video
-  function loadVideo(e) {
-    const file = e.target.files[0];
-    const url = URL.createObjectURL(file);
-    document.getElementById("videoPlayer").src = url;
+    ans.style.display = "block";
+    ans.innerHTML = "🤖 AI જવાબ:<br><br> તમે લખ્યું → <b>" + q + "</b><br><br>(હવે આગળ real AI જોડાશે)";
   }
 </script>
 
