@@ -1,56 +1,63 @@
-# Gujarati Super AI App 🇮🇳
+# 🤖 Gujarati Super AI
 
-Gujarati Super AI App એક **All-in-One AI આધારિત વેબ એપ** છે, જે ગુજરાતી ભાષામાં
-AI Chat, Voice tools, Photo Editing અને Video Editing માટે બનાવવામાં આવી છે.
+Gujarati Super AI એ એક મફત (Free) વેબ આધારિત AI સહાયક છે, જે ગુજરાતી ભાષામાં પ્રશ્નોના જવાબ આપે છે.
 
----
-
-## 🚀 Features
-
-- 🤖 Gujarati AI Chat (Demo – ChatGPT style)
-- 🔊 Text to Speech (Gujarati voice)
-- 🎙 Speech to Text (Gujarati)
-- 🖼 Online Photo Editing (Photopea)
-- 🎥 Free Video Editing Tools
-- 📱 Mobile Friendly (Responsive Design)
+આ પ્રોજેક્ટનો હેતુ વિદ્યાર્થીઓ, સામાન્ય લોકો અને ગુજરાતી ભાષા વપરાશકર્તાઓને
+સરળ અને સમજાય તેવી રીતે AI મદદ પૂરી પાડવાનો છે.
 
 ---
 
-## 🛠 Technologies Used
+## 🌟 Features
 
-- HTML  
-- CSS  
-- JavaScript  
-- Web Speech API  
-- Free Online AI Tools  
-
----
-
-## ▶️ How to Use
-
-1. Repository open કરો  
-2. `index.html` file open કરો  
-3. Browser માં app ચાલશે  
-4. GitHub Pages enable કરો તો app **online live** થશે  
+- 🗣️ સંપૂર્ણ ગુજરાતી ભાષા સપોર્ટ
+- 📚 ધોરણ 1 થી 12 સુધીના પ્રશ્નોના જવાબ
+- 🤖 AI આધારિત ચેટ સિસ્ટમ
+- ⚡ ઝડપી અને સરળ ઉપયોગ
+- 🌐 વેબ આધારિત (કોઈ એપ ઇન્સ્ટોલ કરવાની જરૂર નથી)
+- 💯 100% Free
 
 ---
 
-## 🌐 Live Website
+## 🛠️ Technologies Used
 
-👉 GitHub Pages દ્વારા publish કરેલી website  
-(Repo settings → Pages)
-
----
-
-## 🎯 Purpose
-
-Gujarati ભાષામાં **AI tools સરળ અને ફ્રી રીતે** લોકો સુધી પહોંચાડવા  
-અને future માં **ChatGPT / Grok AI API integrate** કરવાનું લક્ષ્ય.
+- HTML, CSS, JavaScript
+- GitHub Pages (Free Hosting)
+- AI API (Future Upgrade – Super Power AI)
 
 ---
 
-## 👨‍💻 Developer
+## 🚀 Live Website
 
-**Mitul Thakor**
+👉 Website link will be available here after deployment.
 
-Made with ❤️ in India 🇮🇳
+(Coming Soon)
+
+---
+
+## 📌 Future Plans
+
+- 🔐 Login System
+- 📘 Subject-wise Pages
+- 📝 Quizzes & Practice Tests
+- 🤖 Super Power AI (ChatGPT જેવી AI)
+- 📱 Mobile Friendly UI
+
+---
+
+## 🤝 Contribution
+
+આ પ્રોજેક્ટ ઓપન સોર્સ છે.  
+તમારે સૂચન, સુધારા અથવા નવા ફીચર માટે Pull Request કરી શકો છો.
+
+---
+
+## 📄 License
+
+This project is open-source and free to use for educational purposes.
+
+---
+
+## 👤 Author
+
+**Mitul Thakor**  
+Gujarati AI Enthusiast 🇮🇳
