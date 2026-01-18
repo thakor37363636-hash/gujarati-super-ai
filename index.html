@@ -1,35 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Super Power 777 Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CSS file link -->
-  <link rel="stylesheet" href="style.css">
+  <title>Super Power AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial;
+      background: #020617;
+      color: white;
+      text-align: center;
+    }
+    #chatBox, #imageBox, #voiceBox {
+      width: 95%;
+      border: 1px solid #334155;
+      margin: auto;
+      padding: 10px;
+      overflow-y: auto;
+      border-radius: 8px;
+      min-height: 150px;
+    }
+    input {
+      width: 70%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 5px;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #22c55e;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    hr { border: 1px solid #334155; margin: 20px 0; }
+  </style>
 </head>
-
 <body>
 
-  <!-- GAME TITLE -->
-  <header>
-    <h1>🎰 Super Power 777</h1>
-    <p>Spin the wheel & win coins!</p>
-  </header>
+  <!-- Chat Section -->
+  <h2>🤖 Super Power AI Chat</h2>
+  <div id="chatBox"></div>
+  <br>
+  <input id="userInput" placeholder="Gujarati / Hindi / English ma lakho..." />
+  <button onclick="sendMsg()">Send</button>
 
-  <!-- GAME AREA -->
-  <main>
-    <div id="coins">Coins: 100</div>
+  <hr>
 
-    <div class="slot-box">
-      <span id="slot">❓</span>
-    </div>
+  <!-- Image Generator Section -->
+  <h2>🖼️ Super Power AI Image Generator</h2>
+  <input id="imageInput" placeholder="Type description in Gujarati/Hindi/English..." />
+  <button onclick="generateImage()">Generate Image</button>
+  <div id="imageBox"></div>
 
-    <button id="playButton">SPIN</button>
-  </main>
+  <hr>
 
-  <!-- JS file link -->
-  <script src="game.js"></script>
+  <!-- Voice AI Section -->
+  <h2>🎤 Super Power AI Voice Chat</h2>
+  <button onclick="startVoice()">Start Talking</button>
+  <div id="voiceBox"></div>
+
+  <!-- Scripts -->
+  <script src="chat.js"></script>
+  <script src="image.js"></script>
+  <script src="voice.js"></script>
 
 </body>
 </html>
